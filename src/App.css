@@ -1,0 +1,113 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 10s linear;
+  height: 100px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
+  align-content: center;
+}
+
+.single-letter-input {
+  height: 7vh;
+  width: 4vw;
+  font-size: 3em;
+  text-align: center;
+  margin: 0 1.87vw 2.07vh 0;
+}
+
+.fill-in-letter-form-div{
+  background-image: url("https://vignette.wikia.nocookie.net/gameshows/images/6/61/Wheel_of_Fortune_Puzzle_Board_6.png/revision/latest?cb=20130127193907");
+  background-repeat: no-repeat;
+  height: 62vh;
+  width: 100vw;
+  background-position: center;
+  background-size: 100vw 500px;
+}
+
+.fill-in-letter-form{
+  padding-top: 110px;
+  text-align: left;
+}
+
+.word-blocks{
+  position: relative;
+  left: 13.5vw;
+  bottom: 3vh;
+  width: 80vw;
+}
+
+.number-words-input {
+  height: 25px;
+  width: 50px;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.number-letters-input {
+  width: 50px;
+  font-size: 1.0em;
+  text-align: center;
+  margin-left: 10px
+}
+
+.prev-letters-area{
+  position: fixed;
+  top: 90vh;
+  display: flex;
+  right: 35vw;
+  align-items: center;
+}
+
+.prev-letters-input{
+  margin: 0 1vw 0 1vw;
+  height: 25px;
+  font-size: 1.2em;
+}
+
+.prev-letters-sub{
+  height: 30px;
+  width: 150px;
+}
+
+.all-letter-inputs {
+  align-content: right;
+}
+
+.submit{
+  width: 150px;
+  height: 30px;
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+.question {
+  font-size: 1.4em;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -8,9 +8,10 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #2f593b;
   height: 150px;
   padding: 20px;
+  margin-bottom: 20px;
   color: white;
 }
 
@@ -36,6 +37,7 @@
   font-size: 3em;
   text-align: center;
   margin: 0 1.87vw 2.07vh 0;
+  font-weight: bold;
 }
 
 .fill-in-letter-form-div{
@@ -70,7 +72,7 @@
   width: 50px;
   font-size: 1.0em;
   text-align: center;
-  margin-left: 10px
+  margin: 0 0 5px 5px;
 }
 
 .prev-letters-area{
@@ -79,6 +81,8 @@
   display: flex;
   right: 35vw;
   align-items: center;
+  border: solid 1px grey;
+  padding: 10px;
 }
 
 .prev-letters-input{
@@ -89,7 +93,10 @@
 
 .prev-letters-sub{
   height: 30px;
-  width: 150px;
+  width: 170px;
+  font-size: .9em;
+  background-color: #2f593b;
+  color: white;
 }
 
 .all-letter-inputs {
@@ -101,11 +108,35 @@
   height: 30px;
   margin-top: 20px;
   font-size: 1.2em;
+  background-color: #2f593b ;
+  color: white;
 }
 
 .question {
   font-size: 1.4em;
 }
+
+.single-word-result {
+  padding-left: 25vw;
+  display: flex;
+  justify-content: left;
+}
+
+#results{
+  display: inline;
+  list-style: none;
+  padding-left: 20px;
+}
+
+#results li{
+  display: inline;
+}
+
+#results li + li:before{
+  content: ", ";
+}
+
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

@@ -5,6 +5,7 @@ const PhaseThree = props => {
   const { calledLetters, words } = props;
   const relevantWords = trimState(words);
   const wordEntries = Object.entries(relevantWords);
+  // console.log('WORDS PASSED TO P3: ', words)
 {
   {// let first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth;
   // let confidentWords = [];
@@ -75,16 +76,16 @@ const PhaseThree = props => {
       {
         wordEntries.map(word => {
           const allPosibilities = wordGuesser(word[1].value, calledLetters)
+          const confidentLine = allPosibilities.length === 1 ? 'definitely' : 'likely';
           return (
-          <div key={word}>
-            <p>{`${word[0]} word: `}</p><br />
-            <p>It can be... </p>
-              <ul>
+          <div className="single-word-result" key={word}>
+            <p>{`The ${word[0]} word is ${confidentLine}: `}</p>
+              <ul id="results">
                 {
-                  allPosibilities.map(p => <li key={p}>{p}</li>)
+                  allPosibilities.map(p => <li id='result-word' key={p}>{p[0].toUpperCase() + p.slice(1)}</li>)
                 }
               </ul>
-
+            <br />
           </div>
           )
         }

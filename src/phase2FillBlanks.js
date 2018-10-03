@@ -18,6 +18,7 @@ const PhaseTwo = props => {
                     className="single-letter-input"
                     key={elem}
                     name={`${word[0]}`}
+                    maxLength='1'
                     type="text"
                   />
                 ))}
@@ -26,8 +27,8 @@ const PhaseTwo = props => {
           ))}
           <div className="prev-letters-area">
             <p>Previously called letters: </p>
-            <input type="text" className="prev-letters-input" name="calledLetters" />
-            <button className="prev-letters-sub"type="submit">Show me the results!</button>
+            <input autoComplete="off" type="text" className="prev-letters-input" name="calledLetters" />
+            <button className="prev-letters-sub" type="submit">Show me the results!</button>
           </div>
         </form>
       </div>

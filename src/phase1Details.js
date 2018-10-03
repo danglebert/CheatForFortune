@@ -3,7 +3,7 @@ import { createTable, wordInfo } from './util';
 
 const PhaseOne = props => {
   const { handleChangeWords, handleFirstSubmit, wordCount } = props;
-  const maxWords = 10;
+  const maxWords = 4;
 
   return (
     <div>
@@ -15,7 +15,7 @@ const PhaseOne = props => {
           type="number"
           name="wordCount"
           min="1"
-          max="10"
+          max="4"
           onChange={handleChangeWords}
         />
         <br />
@@ -33,7 +33,7 @@ const PhaseOne = props => {
                       type="number"
                       name={elem}
                       min="1"
-                      max="20"
+                      max="12"
                     />
                   </div>
                 ))

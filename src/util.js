@@ -6,6 +6,7 @@ export const wordGuesser = (word, calledLetters) => {
   let wordLength = word.length;
   let wordsWithSameLength = wordsObj[wordLength]
   let wordStr = word.toLowerCase();
+  console.log('HERE: ', word)
 
   for (let i = 0; i < wordsWithSameLength.length; ++i) {
     let currentWord = wordsWithSameLength[i].toLowerCase();
@@ -48,14 +49,14 @@ const wordFreq = async (word) => {
   return returnVal;
 };
 
-
+{
 // this is BAD -- cannot async filter!!
 
-// export const confident = (wordArr) => wordArr.filter(async word =>{
-//   const testVar = await wordFreq(word);
-//   console.log('IN LOOP: ', typeof testVar)
-//   if (await wordFreq(word) > 50) return word;
-// });
+export const confident = (wordArr) => wordArr.filter(async word =>{
+  const testVar = await wordFreq(word);
+  console.log('IN LOOP: ', typeof testVar)
+  if (await wordFreq(word) > 50) return word;
+});
 
 
 export const confident = async wordArr => {
@@ -84,15 +85,17 @@ export const doubtful = async (wordArr) => {
   return answer
 }
 
-// skeptical(['Truck', 'Track', 'Trick']).then(possibilities => {
-//   console.log(possibilities);
-// })
+skeptical(['Truck', 'Track', 'Trick']).then(possibilities => {
+  console.log(possibilities);
+})
 
-// const secondTest = async () => console.log('second test: ', await doubtful(['hello', 'the', 'intricate', 'uncanny', 'fyrd' ]));
+const secondTest = async () => console.log('second test: ', await doubtful(['hello', 'the', 'intricate', 'uncanny', 'fyrd' ]));
 
-// secondTest();
+secondTest();
 
-// console.log(wordGuesser('ki_chen', "RSTLNE"));
+console.log(wordGuesser('ki_chen', "RSTLNE"));
+}
+
 
 const orderWords = ['First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth', 'Seventh', 'Eighth', 'Ninth', 'Tenth', 'Eleventh', "Twelfth", 'Thirteenth', 'Fourteenth', 'Fifteenth', 'Sixteenth', 'Seventeenth', 'Eighteenth', 'Nineteenth', 'Twentieth'];
 

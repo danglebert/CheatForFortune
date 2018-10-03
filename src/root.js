@@ -30,38 +30,29 @@ export default class Root extends Component {
     const second = event.target.Second ? { length: Number(event.target.Second.value), value: [] } : null;
     const third = event.target.Third ? { length: Number(event.target.Third.value), value: [] } : null;
     const fourth = event.target.Fourth ? { length: Number(event.target.Fourth.value), value: [] } : null;
-    const fifth = event.target.Fifth ? { length: Number(event.target.Fifth.value), value: [] } : null;
-    const sixth = event.target.Sixth ? { length: Number(event.target.Sixth.value), value: [] } : null;
-    const seventh = event.target.Seventh ? { length: Number(event.target.Seventh.value), value: [] } : null;
-    const eighth = event.target.Eighth ? { length: Number(event.target.Eighth.value), value: [] } : null;
-    const ninth = event.target.Ninth ? { length: Number(event.target.Ninth.value), value: [] } : null;
-    const tenth = event.target.Tenth ? { length: Number(event.target.Tenth.value), value: [] } : null;
-    wordCount !== '' && (await this.setState({ phase, wordCount, first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth }));
+    wordCount !== '' && (await this.setState({ phase, wordCount, first, second, third, fourth }));
     // console.log(this.state)
   }
 
   async handleSecondSubmit(event){
     event.preventDefault();
     const phase = 'results'
+    console.log('EVENT TARGET ON SUB: ', event.target)
 
     const first = event.target.first ? { ...this.state.first, value: combiner(event.target.first)} : null
     const second = event.target.second ? { ...this.state.second, value: combiner(event.target.second)} : null
-    const third = event.target.Third ? { ...this.state.Third, value: combiner(event.target.Third)} : null
-    const fourth = event.target.Fourth ? { ...this.state.Fourth, value: combiner(event.target.Fourth)} : null
-    const fifth = event.target.Fifth ? { ...this.state.Fifth, value: combiner(event.target.Fifth)} : null
-    const sixth = event.target.Sixth ? { ...this.state.Sixth, value: combiner(event.target.Sixth)} : null
-    const seventh = event.target.Seventh ? { ...this.state.Seventh, value: combiner(event.target.Seventh)} : null
-    const eighth = event.target.Eighth ? { ...this.state.Eighth, value: combiner(event.target.Eighth)} : null
-    const ninth = event.target.Ninth ? { ...this.state.Ninth, value: combiner(event.target.Ninth)} : null
-    const tenth = event.target.Tenth ? { ...this.state.Tenth, value: combiner(event.target.Tenth)} : null
+    const third = event.target.third ? { ...this.state.third, value: combiner(event.target.third)} : null
+    const fourth = event.target.fourth ? { ...this.state.fourth, value: combiner(event.target.fourth)} : null
     const calledLetters = event.target.calledLetters.value;
-    await this.setState({phase, calledLetters, first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth})
+    // await promises, then set state so phase changes
+    await this.setState({phase, calledLetters, first, second, third, fourth})
+    // make sure it happens only after words promises
     // console.log(this.state)
   }
 
   render() {
-    const { phase, wordCount, calledLetters, first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth } = this.state;
-    const words = { first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth }
+    const { phase, wordCount, calledLetters, first, second, third, fourth } = this.state;
+    const words = { first, second, third, fourth }
 
     return (
       phase === 'details' ?

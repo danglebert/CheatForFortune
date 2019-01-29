@@ -38,7 +38,9 @@ const PhaseOne = props => {
                   </div>
                 ))
                 .slice(0, maxWords)}
-              <button type="submit" className='submit'>Next</button>
+              <button type="submit" className="submit">
+                Next
+              </button>
             </div>
           </div>
         ) : null}
@@ -48,19 +50,3 @@ const PhaseOne = props => {
 };
 
 export default PhaseOne;
-
-// backup plan
-// {wordCount ? (
-//   <div>
-//     <p>Tell me what you know about each word: </p>
-//     {createTable(wordCount)
-//       .map(elem => (
-//         <div key={elem}>
-//           <label>{elem}: </label>
-//           <input type="text" name={elem} />
-//         </div>
-//       ))
-//       .slice(0, maxWords)}
-//     <button type="submit">Submit</button>
-//   </div>
-// ) : null}

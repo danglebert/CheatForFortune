@@ -9,7 +9,11 @@ const PhaseTwo = props => {
   return (
     <div className="center">
       <div className="fill-in-letter-form-div">
-        <form autoComplete="off" className="fill-in-letter-form" onSubmit={handleSecondSubmit}>
+        <form
+          autoComplete="off"
+          className="fill-in-letter-form"
+          onSubmit={handleSecondSubmit}
+        >
           {newStateEntries.map(word => (
             <div key={word[0]}>
               <div className="word-blocks">
@@ -18,7 +22,7 @@ const PhaseTwo = props => {
                     className="single-letter-input"
                     key={elem}
                     name={`${word[0]}`}
-                    maxLength='1'
+                    maxLength="1"
                     type="text"
                   />
                 ))}
@@ -27,8 +31,15 @@ const PhaseTwo = props => {
           ))}
           <div className="prev-letters-area">
             <p>Previously called letters: </p>
-            <input autoComplete="off" type="text" className="prev-letters-input" name="calledLetters" />
-            <button className="prev-letters-sub" type="submit">Show me the results!</button>
+            <input
+              autoComplete="off"
+              type="text"
+              className="prev-letters-input"
+              name="calledLetters"
+            />
+            <button className="prev-letters-sub" type="submit">
+              Show me the results!
+            </button>
           </div>
         </form>
       </div>
